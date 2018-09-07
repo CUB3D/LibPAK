@@ -1,0 +1,29 @@
+Format
+
+---------------
+	Header
+--------------
+	Data
+--------------
+
+-- Header format --
+
+--------------
+	Magic
+--------------
+	Version
+--------------
+	File count
+--------------
+	File list
+--------------
+
+For each file in file list
+
+------------
+	size
+------------
+	offset
+------------
+	sha hash
+------------

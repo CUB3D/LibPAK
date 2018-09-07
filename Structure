@@ -9,13 +9,15 @@ Format
 -- Header format --
 
 --------------
-	Magic
+	Magic ("PAK")
 --------------
 	Version
 --------------
 	File count
 --------------
 	File list
+--------------
+    Path list
 --------------
 
 For each file in file list
@@ -27,3 +29,10 @@ For each file in file list
 ------------
 	sha hash
 ------------
+
+For each entry in path list
+-------------
+    size
+-------------
+    path
+-------------

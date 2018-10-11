@@ -202,6 +202,8 @@ struct PAKFileEntry* getFileFromPath(struct PAKFile* file, const char* path) {
             return &file->header.files[i];
         }
     }
+
+    return NULL;
 }
 
 void setFileDataP(struct PAKFile* file, const char* path, char* data, int size) {

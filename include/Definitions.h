@@ -6,14 +6,18 @@
 #define LIBPAK_DEFINITIONS_H
 
 
-#if COMPILING && WIN32
+// Handle declspec for cross platform
+#if COMPILING && _WIN32
     #define EXPORT __declspec(dllexport)
-#else
+#elif _WIN32
     #define EXPORT __declspec(dllimport)
 #endif
 
-#ifdef UNIX
+#ifdef linux
     #define EXPORT
 #endif
+
+
+#define max(a, b) ((a) < (b)) ? b : a
 
 #endif //LIBPAK_DEFINITIONS_H

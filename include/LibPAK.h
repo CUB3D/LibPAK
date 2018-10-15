@@ -5,6 +5,10 @@
 
 // Define structs used globally
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 struct PAKFileEntry {
     int fileSize;
     int fileOffset;
@@ -43,5 +47,9 @@ EXPORT struct PAKFileEntry* addFile(struct PAKFile* file, int size, const char* 
 EXPORT struct PAKFileEntry* getFileFromPath(struct PAKFile* file, const char* path);
 EXPORT void setFileDataP(struct PAKFile* file, const char* path, char* data, int size);
 EXPORT void getFileData(struct PAKFile* file, struct PAKFileEntry* entry, char* outbuffer);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

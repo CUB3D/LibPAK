@@ -98,6 +98,20 @@ void initPAK(struct PAKFile* file, int fileCount, int maxFileSize) {
     file->header.files = (struct PAKFileEntry*) malloc(sizeof(struct PAKFileEntry) * file->header.fileCount);
     file->header.paths = (struct PAKPathEntry*) malloc(sizeof(struct PAKPathEntry) * file->header.fileCount);
     file->data = (char*) malloc(sizeof(char) * maxFileSize);
+
+    for(int i = 0; i < file->header.fileCount; i++) {
+        struct PAKFileEntry* entry = &file->header.files[i];
+        struct PAKPathEntry* path = &file->header.paths[i];
+
+        entry->fileOffset = 0;
+        entry->hash = 0;
+        entry->fileSize = 0;
+        entry->index = i;
+
+        path->data = NULL;
+        path->length = 0;
+        path->index = 0;
+    }
 }
 
 struct PAKFileEntry* createFile(struct PAKFile *file, int index, int size) {

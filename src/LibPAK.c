@@ -197,7 +197,7 @@ struct PAKFileEntry* addFile(struct PAKFile* file, int size, const char* path) {
 
 struct PAKFileEntry* getFileFromPath(struct PAKFile* file, const char* path) {
     for (int i = 0; i < file->header.fileCount; ++i) {
-        int length = max(strlen(path), file->header.paths[i].length);
+        int length = pak_max(strlen(path), file->header.paths[i].length);
         if(memcmp(file->header.paths[i].data, path, length) == 0) {
             return &file->header.files[i];
         }

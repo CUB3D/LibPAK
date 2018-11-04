@@ -18,6 +18,6 @@
 #endif
 
 
-#define max(a, b) ((a) < (b)) ? b : a
+#define pak_max(a, b) ((a) < (b)) ? b : a
 
 #endif //LIBPAK_DEFINITIONS_H

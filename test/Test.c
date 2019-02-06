@@ -39,8 +39,9 @@ int main() {
     for (int i = 0; i < inFile.header.fileCount; ++i) {
         printf("%s - ", inFile.header.paths[i].data);
         printf("String of length: %d - ", inFile.header.files[i].fileSize);
-        char dat[inFile.header.files[i].fileSize * sizeof(char)];
+        char* dat = malloc(inFile.header.files[i].fileSize);
         getFileData(&inFile, &inFile.header.files[i], dat);
         printf("%s\n", dat);
+        free(dat);
     }
 }

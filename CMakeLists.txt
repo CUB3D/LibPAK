@@ -3,7 +3,11 @@ project(LibPAK)
 
 set(CMAKE_C_STANDARD 11)
 
-add_library(PAK SHARED src/LibPAK.c include/LibPAK.h include/Definitions.h)
+set(PAK_SRC src/LibPAK.c)
+
+
+add_library(PAK SHARED ${PAK_SRC})
+target_include_directories(PAK PUBLIC include)
 
 add_executable(Test test/Test.c)
 target_link_libraries(Test PAK)

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <malloc.h>
-#include "../include/LibPAK.h"
+#include "LibPAK.h"
 
 void readPak(struct PAKFile* file, const char* filepath) {
     FILE* fileHandle = fopen(filepath, "rb");

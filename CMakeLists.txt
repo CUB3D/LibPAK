@@ -5,8 +5,15 @@ set(CMAKE_C_STANDARD 11)
 
 option(PAK_BUILD_TEST "Build tests" ON)
 option(PAK_BUILD_TOOLS "Build tools" ON)
+option(PAK_BUILD_STATIC "Build static lib" ON)
 
-add_library(PAK SHARED src/LibPAK.c)
+set(PAK_SRC src/LibPAK.c)
+
+if(PAK_BUID_STATIC)
+    add_library(PAK STATIC ${PAK_SRC})
+else()
+    add_library(PAK SHARED ${PAK_SRC})
+endif()
 target_include_directories(PAK PUBLIC include)
 
 if(PAK_BUILD_TEST)

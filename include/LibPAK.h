@@ -35,10 +35,10 @@ struct PAKFile {
 };
 
 EXPORT int PAKreadf(struct PAKFile* file, const char* filename);
-EXPORT int PAKreadm(struct PAKFile* file, const void* data);
+EXPORT int PAKreadm(struct PAKFile* file, const void* data, const size_t dataLen);
 
 
-EXPORT void readPak(struct PAKFile* file, const char* filepath);
+EXPORT void readPak(struct PAKFile* file, const FILE* fileBuf);
 EXPORT void writePak(struct PAKFile file, const char* filename);
 
 EXPORT void initPAK(struct PAKFile* file, int fileCount, int maxFileSize);

@@ -34,6 +34,9 @@ struct PAKFile {
     char* data;
 };
 
+EXPORT int PAKreadf(struct PAKFile* file, const char* filename);
+EXPORT int PAKreadm(struct PAKFile* file, const void* data);
+
 
 EXPORT void readPak(struct PAKFile* file, const char* filepath);
 EXPORT void writePak(struct PAKFile file, const char* filename);

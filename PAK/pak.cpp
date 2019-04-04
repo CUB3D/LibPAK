@@ -52,7 +52,8 @@ void buildPAK(struct arguments args) {
     initPAK(&pak, size, fileSize); // Add buffer space just in case file size changes next loop
 
     for(auto& child : srcItr) {
-        auto f = addFile(&pak, child.file_size(), child.path().lexically_relative(inputPath).c_str());
+        auto childPath =  child.path().lexically_relative(inputPath).c_str();
+        auto f = addFile(&pak, child.file_size(), childPath);
 
         char* filedata = static_cast<char *>(malloc(child.file_size()));
 

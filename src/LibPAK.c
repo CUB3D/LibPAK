@@ -3,6 +3,15 @@
 #include <malloc.h>
 #include "LibPAK.h"
 
+int PAKreadf(struct PAKFile* file, const char* filename) {
+    readPak(file, filename);
+    return 0;
+}
+
+int PAKreadm(struct PAKFile* file, const void* data) {
+    return 0;
+}
+
 void readPak(struct PAKFile* file, const char* filepath) {
     FILE* fileHandle = fopen(filepath, "rb");
 

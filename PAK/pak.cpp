@@ -62,7 +62,7 @@ void buildPAK(struct arguments args) {
         setFileData(&pak, f, filedata, child.file_size());
     }
     finallizePAK(&pak);
-    writePak(pak);
+    writePak(pak, args.outputFile);
 }
 
 

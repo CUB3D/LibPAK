@@ -58,8 +58,8 @@ void readPak(struct PAKFile* file, const char* filepath) {
     fread(file->data, sizeof(char), size, fileHandle);
 }
 
-void writePak(struct PAKFile file) {
-    FILE* fileHandle = fopen("Test.pak", "wb");
+void writePak(struct PAKFile file, const char* filename) {
+    FILE* fileHandle = fopen(filename, "wb");
 
     // Write header
     fwrite("PAK", sizeof(char), 3, fileHandle);

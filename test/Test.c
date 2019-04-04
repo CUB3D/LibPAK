@@ -31,7 +31,7 @@ int main() {
     }
 
     finallizePAK(&file);
-    writePak(file);
+    writePak(file, "Test.pak");
 
     struct PAKFile inFile;
     readPak(&inFile, "Test.pak");

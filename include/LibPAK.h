@@ -36,7 +36,7 @@ struct PAKFile {
 
 
 EXPORT void readPak(struct PAKFile* file, const char* filepath);
-EXPORT void writePak(struct PAKFile file);
+EXPORT void writePak(struct PAKFile file, const char* filename);
 
 EXPORT void initPAK(struct PAKFile* file, int fileCount, int maxFileSize);
 EXPORT struct PAKFileEntry* createFile(struct PAKFile *file, int index, int size);
